@@ -58,7 +58,7 @@ public class Exercise4Test {
 
     @Test
     public void testIsEmptyMethodOverIntegerList() {
-//        for (int i = 0; i < testingIntegerValues.size(); i++) {
+//   iterator      for (int i = 0; i < testingIntegerValues.size(); i++) {
 //            testingIntegerValues.remove(i);
 //        }
 

@@ -40,12 +40,65 @@ public class MyList<Integer> extends ArrayList<Integer> {
     // A counter to hold the number of adds that were made on the list
     private int differentElements;
 
-    public MyList(){
+    public MyList() {
         differentElements = 0;
     }
 
+    public boolean add(Integer e) {
+        if (!super.contains(e)) {
+            this.differentElements++;
+        }
+        return super.add(e);
+    }
+
+    public void add(int i,Integer n) {
+        if (!super.contains(n)) {
+            this.differentElements++;
+        }
+
+    }
+    public Integer remove(int index){
+        int nr=0;
+        for (int i = 0; i < super.size(); i++) {
+            if (super.get(index)==super.get(i)){
+                nr++;
+            }
+        }
+        if (nr==1){
+            this.differentElements--;
+        }
+        return super.remove(index);
+
+
+    }
+
+    public boolean remove(Object o){
+        int nr=0;
+        boolean contine=false;
+        if (super.contains(o)){
+            for (int i=0;i<super.size();i++){
+                if (o.equals(super.get(i))){
+                    nr++;
+                }
+            }
+            if (nr==1)
+                this.differentElements--;
+            super.remove(o);
+            contine=true;
+
+        }
+        return contine;
+    }
+
+    public boolean addAll(ArrayList<Integer> c) {
+        if (!super.contains(c)) {
+            this.differentElements ++;
+        }
+        return super.addAll(c);
+    }
     // TODO Exercise #2 a) Override add() and addAll() methods so that the list should retain the number of
     // TODO Exercise #2 a) different elements (Hint: check out the methods signatures on the List documentation)
+
 
     // TODO Exercise #2 b) Override the remove methods so that the number of different elements is updated when
     // TODO Exercise #2 b) an element is removed
@@ -55,7 +108,17 @@ public class MyList<Integer> extends ArrayList<Integer> {
     // TODO Exercise #2 c) Override the clear method and reset the number of different elements
 
     // TODO Exercise #2 d) Return the number of different elements that exist into the list
+
+public boolean remove(ArrayList<Integer> y){
+        if(!super.contains(y)){
+            this.differentElements --;
+        }
+return super.remove(y);
+}
+
     public int getDifferentElements() {
-        return 0;
+        return this.differentElements;
     }
+
+
 }

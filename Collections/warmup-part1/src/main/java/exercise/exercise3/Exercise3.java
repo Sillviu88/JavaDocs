@@ -1,6 +1,10 @@
 package exercise.exercise3;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Created by Radu.Hoaghe on 04/20/2015.
@@ -21,30 +25,55 @@ import java.util.List;
 public class Exercise3 {
 
     // List containing some elements that need to be added into the Set
-    private List<String> listToAdd;
-
+    private List<String> listToAdd = new ArrayList<String>();
+    public Set<String> SetM = new HashSet<String>();
+    public HashSet<String> SetZ = new HashSet<String>();
+    public TreeSet<String> SetK = new TreeSet<String>();
     public Exercise3(List<String> l) {
         listToAdd = l;
     }
 
-    public void addElementsToSets(){
+    public void addElementsToSets() {
 
-        System.out.println("The elements that will be added to the Sets: ");
-        // TODO Exercise #3 a) Check the content of the elements you will add into the Set
+        for (int i = 0; i < listToAdd.size(); i++) {
+            SetM.add(listToAdd.get(i));
+            SetK.add(listToAdd.get(i));
+            SetZ.add(listToAdd.get(i));
+            System.out.println("The elements that will be added to the Sets:  " + listToAdd.get(i));
 
-        // TODO Exercise #3 b) add the elements from listToAdd to the Sets
+        }
+        SetK.add("that") ;
+        SetK.add("no") ;
 
-        // TODO Exercise #3 c) Check the content of the Sets
-        System.out.println("\nThe elements contained in the first Set: ");
+        for (String x : SetK) {
+            System.out.println("\nThe elements contained in the first Set: "+x);
 
-        System.out.println("\nThe elements contained in the second Set: ");
+        }
+        for (String y : SetM) {
+            System.out.println("\nThe elements contained in the first Set: "+y);
+        }
+        for (String z : SetM) {
+            System.out.println("\nThe elements contained in the first Set: "+z);
+        }}
 
-        System.out.println("\nThe elements contained in the third Set: ");
+            // TODO Exercise #3 a) Check the content of the elements you will add into the Set
 
+            // TODO Exercise #3 b) add the elements from listToAdd to the Sets
 
-        System.out.println("\nThe elements contained in the TreeSet after inserting two duplicates: ");
+            // TODO Exercise #3 c) Check the content of the Sets
 
-        // TODO Exercise #3 d) Add to the TreeSet two elements that already exist in the Set
-        // TODO Exercise #3 d) and print again the TreeSet. What do you see?
+public void addDupl(){
+
+        SetK.add("that") ;
+        SetK.add("no") ;
+
+        for (String m : SetK) {
+            System.out.println("\nThe elements contained in the TreeSet after inserting two duplicates: "+m);
     }
-}
+
+
+
+            // TODO Exercise #3 d) Add to the TreeSet two elements that already exist in the Set
+            // TODO Exercise #3 d) and print again the TreeSet. What do you see?
+        }
+    }
