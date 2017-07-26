@@ -11,6 +11,7 @@ public class Exercise0 {
 
     public Exercise0(){
 
+        ////jjhiuiuuih
     }
 
     public void iterateThroughList(){
